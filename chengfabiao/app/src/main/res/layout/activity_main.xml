@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/cs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="123"/>
+
+    <EditText
+        android:id="@+id/bc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="123"/>
+
+    <TextView
+        android:id="@+id/jg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="结果"/>
+
+    <Button
+        android:id="@+id/jia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加"/>
+
+    <Button
+        android:id="@+id/jian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="减"/>
+
+    <Button
+        android:id="@+id/cheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="乘"/>
+
+    <Button
+        android:id="@+id/chu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="除"/>
+
+</LinearLayout>
