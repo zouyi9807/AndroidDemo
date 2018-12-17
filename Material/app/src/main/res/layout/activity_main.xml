@@ -24,12 +24,16 @@
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_delete" />
+            android:id="@+id/fab"
+            app:backgroundTint="#0077d9"
+            app:rippleColor="#33728dff"
+            android:src="@drawable/ic_add_white_24dp"
+            app:fabSize="normal"
+            android:layout_margin="20dp"
+            />
 
     </FrameLayout>
 
