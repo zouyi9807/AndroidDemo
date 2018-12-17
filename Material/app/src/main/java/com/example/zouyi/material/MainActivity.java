@@ -17,11 +17,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.AlphaAnimation;
 import android.widget.ActionMenuView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     boolean fabOpened = false;
     private DrawerLayout drawerLayout;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+        textView =findViewById(R.id.tv);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
+
+
 
         drawerLayout = findViewById(R.id.drawer_Layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -136,9 +141,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ObjectAnimator animator = ObjectAnimator.ofFloat(v, "rotation", 0, -155, -135);
         animator.setDuration(500);
         animator.start();
+        textView.setVisibility(View.VISIBLE);//增加图层
         AlphaAnimation alphaAnimation = new AlphaAnimation(0, 0.7f);
         alphaAnimation.setDuration(500);
         alphaAnimation.setFillAfter(true);
+        textView.startAnimation(alphaAnimation);
         fabOpened = true;
 
     }
@@ -149,6 +156,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         animator.start();
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.7f, 0);
         alphaAnimation.setDuration(500);
+        textView.startAnimation(alphaAnimation);
+        textView.setVisibility(View.GONE);
         fabOpened = false;
     }
 

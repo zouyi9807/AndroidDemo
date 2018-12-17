@@ -23,6 +23,12 @@
 
         </android.support.v7.widget.Toolbar>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tv"
+            android:visibility="gone"
+            android:background="#ffff"/>
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
