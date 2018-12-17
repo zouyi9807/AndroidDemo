@@ -20,7 +20,7 @@ import android.widget.ActionMenuView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
+    boolean fabOpened = false;
     private DrawerLayout drawerLayout;
 
     @Override
@@ -31,11 +31,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+
+
+                if (!fabOpened) {
+                    openMenu(v);
+                } else {
+                    closeMenu(v);
+                }
             }
         });
 
@@ -126,5 +132,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    public void openMenu(View v) {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(v, "rotation", 0, -155, -135);
+        animator.setDuration(500);
+        animator.start();
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 0.7f);
+        alphaAnimation.setDuration(500);
+        alphaAnimation.setFillAfter(true);
+        fabOpened = true;
+
+    }
+
+    public void closeMenu(View v) {
+        ObjectAnimator animator = ObjectAnimator.ofFloat(v, "rotation", -135, 20, 0);
+        animator.setDuration(500);
+        animator.start();
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.7f, 0);
+        alphaAnimation.setDuration(500);
+        fabOpened = false;
+    }
 
 }
