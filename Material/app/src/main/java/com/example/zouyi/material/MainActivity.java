@@ -32,14 +32,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
         textView =findViewById(R.id.tv);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (!fabOpened) {
                     openMenu(v);
                 } else {
@@ -47,8 +45,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-
-
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeMenu(fab);
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer_Layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
