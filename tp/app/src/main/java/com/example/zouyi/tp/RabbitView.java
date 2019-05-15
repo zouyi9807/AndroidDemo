@@ -21,7 +21,7 @@ public class RabbitView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint paint = new Paint();
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.airplane);
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.rabbit);
         int height = bitmap.getHeight() / 2;
         int width = bitmap.getWidth() / 2;
         canvas.drawBitmap(bitmap, bitmapX - width, bitmapY - height, paint);
