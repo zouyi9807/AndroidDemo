@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QQ下载</string>
+    <string name="start">开始下载</string>
+    <string name="pause">暂停下载</string>
+    <string name="cancel">删除安装包</string>
+    <string name="ps">
+        PS:文件下载路径为Download目录下\n     下载文件为手机QQ 7.9.0
+    </string>
+</resources>
